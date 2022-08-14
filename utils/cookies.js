@@ -1,4 +1,4 @@
-const create = (res, token, extTime = 300000) => {
+const create = (res, token, extTime = 3000000) => {
     res.cookie("access_token", token, {
       expires: new Date(Date.now() + extTime),
       secure: false,

@@ -15,7 +15,7 @@ module.exports = db => async (req, res, next) => {
   });
   if (!queryResult.ok) return next(register[queryResult.code] || errors[500]);
 
-  const message = 'Gracias por registrarte en mi Ecommerce, disfruta de nuestros productos';
+  //const message = 'Gracias por registrarte en mi Ecommerce, disfruta de nuestros productos';
 
   // try {
   //   await sendEmail({
