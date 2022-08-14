@@ -27,11 +27,11 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS products (
   id uuid PRIMARY KEY DEFAULT uuid_generate_v4(),
   ref TEXT NOT NULL UNIQUE,
-  name VARCHAR(20) NOT NULL,
+  name VARCHAR(50) NOT NULL,
   price NUMERIC(1000, 2) NOT NULL,
   stock INTEGER NOT NULL,
   img TEXT NOT NULL,
-  details VARCHAR(500) NOT NULL,
+  details VARCHAR(5000) NOT NULL,
   rate SMALLINT,
   category_id uuid REFERENCES categories
     ON UPDATE CASCADE
