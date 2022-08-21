@@ -1,5 +1,6 @@
 const { getFullUser } = require("../../queries/auth");
 const errors = require("../../errors/commons");
+const { query } = require("express");
 
 module.exports = (db) => async (_, res, next) => {
   const { email } = res.locals;
@@ -8,12 +9,12 @@ module.exports = (db) => async (_, res, next) => {
 
   if (!queryResult.ok) return next(errors[400]);
 
-  const { firstName, role, address } = queryResult.data;
+  const { first_name, role, address } = queryResult.data;
 
   res.status(200).json({
     success: true,
     data: {
-      firstName,
+      first_name,
       email,
       address,
       role,
